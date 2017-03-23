@@ -36,3 +36,8 @@ textarea {
     display: none
   }
 }
+
+.form-element label {
+    display: inline-block;
+    width: 150px;
+}
