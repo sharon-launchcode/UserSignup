@@ -64,6 +64,7 @@ namespace UserSignup.Models
         public int UserId { get; } = NextId++;
 
 
+
         public DateTime CreateDate {
             get => createdate;
 
