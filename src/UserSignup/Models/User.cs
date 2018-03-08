@@ -12,6 +12,9 @@ namespace UserSignup.Models
         private string username;
         private string email;
         private string password;
+        private int userid;
+        //will need to convert to string from datetime
+        private DateTime createdate;
         // TODO 1: Add UserId, CreateDate and a few more properties of your choosing.  Update the Add and Index views 
         public string Username { get; set; }
         public string Email {
@@ -25,7 +28,7 @@ namespace UserSignup.Models
         //get but not set for ID should it be public or private?
         public int UserId { get; }
         public DateTime CreateDate {
-            //get;
+            get => createdate;
 
             set
             {
@@ -36,6 +39,7 @@ namespace UserSignup.Models
 
         // add a constructor to set the CreateDate when a new user is instantiated   
         //above constructor is added but I need to figure out what to do with the get
+        //note to self was able to add a body to get after private variable created with DateTime data type
     }
 
 }
