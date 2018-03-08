@@ -12,6 +12,7 @@ namespace UserSignup.Models
         private string username;
         private string email;
         private string password;
+        private string verify;
         private int userid;
         //will need to convert to string from datetime
         private DateTime createdate;
@@ -53,7 +54,27 @@ namespace UserSignup.Models
         }
         //For password the getter should be private
         //get but not set for ID should it be public or private?
+        public string Verify
+        {
+            get => verify;
+            //password has aready been set to private above
 
+            set
+            {
+                //below if example from vampiire lecture
+                if (value.Length < 5)
+                {
+                    throw new ArgumentException("Verification Password is too short.");
+                }
+                if (value.Length > 15)
+                {
+                    throw new ArgumentException("Verification Password is too long.");
+                }
+
+                verify = value;
+            }
+
+        }
         // from vampiire counter of all users that have been instantiated (prevents overlapping IDs)
         // from vampiire static so it is at the Class level (can be counted globally outside of all User instances)
         private static int NextId = 0;

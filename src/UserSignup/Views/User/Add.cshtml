@@ -26,8 +26,14 @@
         <input type="password" asp-for="@Model.Password" required />
     </div>
     <div class="form-element">
-        <label>Verify Password</label>
-        <input name="verify" type="password" />
+        <!-- <label>Verify Password</label> -->
+        <!-- <input name="verify" type="password" />  -->
+
+        <label asp-for="@Model.Verify">Verify Password: </label>
+        <input type="password" asp-for="@Model.Verify" required />
+        <span asp-validation-for="Verify"></span>
+
+
     </div>
 
     <input type="submit" value="Submit" />
