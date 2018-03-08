@@ -10,13 +10,15 @@ namespace UserSignup.Models
         private List<User> users = new List<User> {
             new User
             {
+                Username = "Username1",
                 Password = "password1",
-                Email = "email1"
+                Email = "email1@gogus.com"
             },
             new User
             {
-                Password = "password1",
-                Email = "email1"
+                Username = "Username2",
+                Password = "password2",
+                Email = "email2@bogus.com"
             }
         };
         //TODO 2: instantiate a few new users in code here and add them to your users list

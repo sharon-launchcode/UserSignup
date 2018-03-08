@@ -16,7 +16,15 @@ namespace UserSignup.Models
         //will need to convert to string from datetime
         private DateTime createdate;
         // TODO 1: Add UserId, CreateDate and a few more properties of your choosing.  Update the Add and Index views 
-        public string Username { get; set; }
+        public string Username
+        {
+            get => username;
+            set
+            {
+                username = value;
+            }
+
+        }
         public string Email {
             get => email;
 
@@ -45,7 +53,17 @@ namespace UserSignup.Models
         }
         //For password the getter should be private
         //get but not set for ID should it be public or private?
-        public int UserId { get; }
+
+        // from vampiire counter of all users that have been instantiated (prevents overlapping IDs)
+        // from vampiire static so it is at the Class level (can be counted globally outside of all User instances)
+        private static int NextId = 0;
+
+        // from vampiire can only be set internally (private setter)
+        //from vampiire  defaults to the CURRENT VALUE of NextId and THEN increments NextId for the next instantiation
+        // from vampiire POSTfix increment (Variable++) opposed to PREfix increment (++Variable)
+        public int UserId { get; } = NextId++;
+
+
         public DateTime CreateDate {
             get => createdate;
 
