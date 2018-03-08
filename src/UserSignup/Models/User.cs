@@ -24,7 +24,26 @@ namespace UserSignup.Models
                 email = value;
             }
         }
-        public string Password { get; set; }
+        public string Password {
+            get => password;
+            //password has aready been set to private above
+
+            set {
+                    //below if example from vampiire lecture
+                    if (value.Length < 5)
+                    {
+                        throw new ArgumentException("Password is too short.");
+                    }
+                    if (value.Length > 15)
+                    {
+                        throw new ArgumentException("Password is too long.");
+                    }
+
+                password = value;
+                }
+
+        }
+        //For password the getter should be private
         //get but not set for ID should it be public or private?
         public int UserId { get; }
         public DateTime CreateDate {
